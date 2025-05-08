@@ -8,6 +8,9 @@ int main()
         for(int j=0; j<i+1; j++){ //outer start
             cout<< "*";  
         }
+        // for(int j=0; j<i+1; j++){ //outer start
+        //     cout<< i+1 <<" ";  
+        // }
         cout<< endl;
     }
     return 0;
