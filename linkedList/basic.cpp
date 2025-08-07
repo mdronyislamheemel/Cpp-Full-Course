@@ -79,6 +79,31 @@ public:
         tail = temp;
     }
 
+    //insert in the middle in ll
+    void insert_middle(int val, int pos){
+        if(pos < 0){
+            cout << "Invalid pos" << endl;
+            return;
+        }
+        if(pos == 0){
+            push_front(val);
+            return;
+        }
+        Node* temp = head;
+        for(int i = 0; i < pos-1; i++){
+            if(temp == NULL){
+                cout << "Invalid Pos"<<endl;
+                return;
+            }
+            temp = temp->next;
+        }
+        Node* newNode = new Node(val);
+        newNode ->next = temp->next;
+        temp->next = newNode;
+    }
+
+
+    //print the linked list
     void print_LL(){
         Node* temp = head;
         while(temp != NULL){
@@ -109,6 +134,9 @@ int main()
 
     //pop back
     ll.pop_back(); //2->1->NULL
+
+    //insert middle in the linked list
+    ll.insert_middle(4,1); //2->4->1->NULL
 
     ll.print_LL();
 
