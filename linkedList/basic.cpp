@@ -112,6 +112,21 @@ public:
         }
         cout << "NULL" << endl;
     }
+
+    //seraching a value in linked list
+    int search(int key){
+        Node* temp = head;
+        int idx = 0;
+        while(temp != NULL){
+            if(temp->data == key){
+                return idx;
+            }
+            temp = temp->next;
+            idx ++;
+        }
+        return -1;
+    }
+
 };
 
 //there are 4 main functions in linked list
@@ -139,6 +154,8 @@ int main()
     ll.insert_middle(4,1); //2->4->1->NULL
 
     ll.print_LL();
+
+    cout << ll.search(1) << endl; //2 
 
     return 0;
 }
